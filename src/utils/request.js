@@ -6,7 +6,7 @@ const service = axios.create({
     timeout: 5000 // 请求超时时间
 })
 
-axios.interceptors.request.use(    
+service.interceptors.request.use(    
     config => {
         const token = store.state.token;        
         token && (config.headers.Authorization = token);        
@@ -16,7 +16,7 @@ axios.interceptors.request.use(
         return Promise.error(error);    
     })
 
-axios.interceptors.response.use(    
+service.interceptors.response.use(    
     response => {        
         if (response.status === 200) {            
             return Promise.resolve(response);        
@@ -24,5 +24,32 @@ axios.interceptors.response.use(
             return Promise.reject(response);        
         }    
     },
-
+    error=>{
+        if(error.response.status){
+            switch(error.response.status){
+                case 401:
+                    console.log("未登录")                    
+                    // router.replace({                        
+                    //     path: '/login',                        
+                    //     query: { 
+                    //         redirect: router.currentRoute.fullPath 
+                    //     }
+                    // });
+                    break;
+                case 403:
+                    console.log("身份已经过期")
+                    // localStorage.removeItem('token');
+                    // // store.commit('loginSuccess', null);
+                    // setTimeout(() => {
+                    //     toLogin();
+                    // }, 1000);
+                    break;
+                default:
+                    console.log(error);   
+                
+            }
+        }
+        return Promise.reject(error.response);     
+    }
 )
+export default service
