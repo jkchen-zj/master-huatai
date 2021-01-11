@@ -1,3 +1,13 @@
+@font-face{
+    font-family: Rayleigh;
+    src:url('../assets/Rayleigh-Demo-Version-2.otf')
+}
+@font-face{
+    font-family: BebasNeue;
+    src:url('../assets/BebasNeue.otf')
+}
+
+
 html {
     height: 100%;
     box-sizing: border-box;
@@ -15,4 +25,9 @@ body {
 *{
     margin: 0;
     padding: 0;
+}
+.ct{
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
