@@ -224,27 +224,27 @@ input:-webkit-autofill {
 @keyframes glitch {
   0% {
     clip-path: var(--slice-1);
-   transform: translate(-10px,5px);
+   transform: translate(-6px,5px);
   }
   
   10% {
     clip-path: var(--slice-3);
-    transform: translate(0px,10px);
+     transform: translate(-5px,5px);
   }
   
   20% {
-    clip-path: var(--slice-1);
-    transform: translate(-5px,5px);
+    clip-path: var(--slice-0);
+    transform: translate(-5px,-27px);
   }
   
   30% {
     clip-path: var(--slice-3);
-    transform: translate(5px,10px);
+    transform: translate(-5px,18px);
   }
   
   40% {
     clip-path: var(--slice-2);
-    transform: translate(0px,-15px);
+    transform: translate(-1px,-10px);
   }
   
   50% {
@@ -254,17 +254,17 @@ input:-webkit-autofill {
   
   60% {
     clip-path: var(--slice-4);
-    transform: translate(-5px,10px);
+    transform: translate(3px,3px);
   }
   
   70% {
     clip-path: var(--slice-2);
-  transform: translate(0px,0px);
+    transform: translate(-1px,17px);
   }
   
   80% {
     clip-path: var(--slice-5);
-    transform: translate(-10px,-20px);
+    transform: translate(-2px,4px);
   }
   
   90% {
